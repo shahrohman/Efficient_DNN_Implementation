@@ -1,0 +1,3 @@
+[submodule "brevitas"]
+	path = brevitas
+	url = https://github.com/Xilinx/brevitas.git
