@@ -1,0 +1,11 @@
+argparse
+matplotlib
+numpy
+pandas
+scipy
+seaborn
+torch
+torchvision
+tqdm
+requests
+PyYAML
