@@ -1,6 +1,6 @@
 # Efficient DNN Implementation on FPGA
 
-The objective of this project is to optimize a pretrained deep neural network model by quantization/pruning/compression and implemente it on a Xilinx PYNQ-Z2 board using the FINN Framework.
+The objective of this project is to optimize a pretrained deep neural network model by quantization/pruning/compression and implement it on a Xilinx PYNQ-Z2 board using the FINN Framework.
 
 ## Requirements
 
