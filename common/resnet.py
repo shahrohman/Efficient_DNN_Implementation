@@ -1,7 +1,6 @@
 """
 Modified from https://github.com/chenyaofo/pytorch-cifar-models
 """
-from solution import Quantized_Linear, Quantized_Conv2d
 import sys
 import torch.nn as nn
 import torch
@@ -19,12 +18,12 @@ cifar10_pretrained_weight_url = 'https://github.com/chenyaofo/pytorch-cifar-mode
 
 def conv3x3(in_planes, out_planes, stride=1):
     """3x3 convolution with padding"""
-    return Quantized_Conv2d(in_planes, out_planes, kernel_size=3, stride=stride, padding=1, bias=False)
+    return nn.Conv2d(in_planes, out_planes, kernel_size=3, stride=stride, padding=1, bias=False)
 
 
 def conv1x1(in_planes, out_planes, stride=1):
     """1x1 convolution"""
-    return Quantized_Conv2d(in_planes, out_planes, kernel_size=1, stride=stride, bias=False)
+    return nn.Conv2d(in_planes, out_planes, kernel_size=1, stride=stride, bias=False)
 
 
 class BasicBlock(nn.Module):
@@ -73,10 +72,10 @@ class CifarResNet(nn.Module):
         self.layer3 = self._make_layer(block, 64, layers[2], stride=2)
 
         self.avgpool = nn.AdaptiveAvgPool2d((1, 1))
-        self.fc = Quantized_Linear(64 * block.expansion, num_classes, bias=True)
+        self.fc = nn.Linear(64 * block.expansion, num_classes, bias=True)
 
         for m in self.modules():
-            if isinstance(m, Quantized_Conv2d):
+            if isinstance(m, nn.Conv2d):
                 nn.init.kaiming_normal_(m.weight, mode='fan_out', nonlinearity='relu')
             elif isinstance(m, nn.BatchNorm2d):
                 nn.init.constant_(m.weight, 1)

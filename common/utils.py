@@ -203,18 +203,7 @@ def get_module_by_name(module, access_string):
 def model_size(model):
     param_size = 0
     for name, p in model.named_parameters():
-        if 'conv' in name or 'fc' in name:
-            if name[-6:] == 'weight':
-                m = get_module_by_name(model, name[:-7])
-                if m.method == 'normal':
-                    element_size = 4
-                else:
-                    element_size = m.weight_N_bits / 8
-                param_size_ = p.nelement() * element_size
-            else:
-                param_size_ = p.nelement() * p.element_size()
-        else:
-            param_size_ = p.nelement() * p.element_size()
+        param_size_ = p.nelement() * p.element_size()
         param_size += param_size_
 
     buffer_size = 0
