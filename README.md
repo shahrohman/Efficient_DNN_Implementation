@@ -5,10 +5,11 @@ The objective of this project is to optimize a pretrained deep neural network mo
 ## Requirements
 
 * Python >= 3.7 .
-* [Pytorch](https://pytorch.org) >= 1.5.1 .
-* Windows, Linux or macOS.
-* GPU training-time acceleration (*Optional* but recommended).
+* Ubuntu 20.04 for FINN Compiler (other versions may work but are not tested).
 * PYNQ-Z2 board with pynq v2.6 image (other versions may work but are not tested).
+* Vivado 2022.1 (2020.1 or below for Vitis-HLS - Not working on 2021.1 and 2021.2 for some reason).
+* GPU training-time acceleration (*Optional* but recommended).
+
 
 ## Training DNN
 
