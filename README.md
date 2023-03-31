@@ -53,12 +53,12 @@ This message shows that your installation appears to be working correctly.
 
 ### Setting up the FINN docker container
 
-Modify ```FINN_XILINX_PATH```, ```FINN_XILINX_VERSION``` and ```VIVADO_PATH``` environment variables pointing to your Xilinx installation path and Vivado installation path in ```finn_docker.sh```.
+Modify ```FINN_XILINX_PATH```, ```FINN_XILINX_VERSION``` and ```VIVADO_PATH``` environment variables pointing to your Xilinx installation path and Vivado installation path in ```env_finn.sh```.
 Then run the following commands to set up the FINN docker container:
 
 ```bash
-chmod +x finn_docker.sh
-./finn_docker.sh
+chmod +x path_finn.sh
+./path_finn.sh
 ```
 
 ### Verifying the FINN installation
