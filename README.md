@@ -27,7 +27,57 @@ Check out brevitas/notebooks for examples on how to use Brevitas.
 
 ## Exporting to FINN-ONNX
 
+The section below is mainly based on the FINN [getting started](https://finn.readthedocs.io/en/latest/getting_started.html) guide. All of this was tested on Ubuntu 20.04.
+
+### Installing docker
+
+Run the following commands to install docker:
+
+```bash
+chmod +x docker_install.sh
+./docker_install.sh
+```
+
+You can test your docker installation by running the ```hello-world``` container:
+
+```bash
+docker run --rm hello-world
+```
+
+The ```--rm``` flag tells docker to remove the container once it's done. Your output should look like:
+
+```bash
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+```
+
+### Setting up the FINN docker container
+
+Modify ```FINN_XILINX_PATH```, ```FINN_XILINX_VERSION``` and ```VIVADO_PATH``` environment variables pointing to your Xilinx installation path and Vivado installation path in ```finn_docker.sh```.
+Then run the following commands to set up the FINN docker container:
+
+```bash
+chmod +x finn_docker.sh
+./finn_docker.sh
+```
+
+### Verifying the FINN installation
+
+Clone the FINN compiler from the repository: ```git clone https://github.com/Xilinx/finn/``` and go into the directory: ```cd finn```.
+Execute ```./run-docker.sh quicktest``` to verify your installation.
+
+If everything is set up correctly, you can now run the following command to open jupyter notebook:
+
+```bash
+bash ./run-docker.sh notebook
+```
+
+This will launch the Jupyter notebook server inside a Docker container, and print a link on the terminal that you can open in your browser to run the FINN notebooks or create new ones. The link will look something like this (the token you get will be different): ```http://127.0.0.1:8888/?token=1dbc348eff2e275f9fdc9e61d9e9564fe5cf8e0d259a8642```. Open it in your browser and you are ready to go.
+
+### Exporting the model to FINN-ONNX
+
 Next step is to export the trained QNN model to FINN-ONNX format. This can be done by following this [tutorial](https://github.com/Xilinx/finn/blob/main/notebooks/basics/1_brevitas_network_import.ipynb).
+
 
 ## Creating the dataflow graph
 
