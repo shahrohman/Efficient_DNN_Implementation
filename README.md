@@ -58,8 +58,7 @@ Modify ```FINN_XILINX_PATH```, ```FINN_XILINX_VERSION``` and ```VIVADO_PATH``` e
 Then run the following commands to set up the FINN docker container:
 
 ```bash
-chmod +x path_finn.sh
-./path_finn.sh
+source ./path_finn.sh
 ```
 
 ### Verifying the FINN installation
@@ -70,7 +69,7 @@ Execute ```./run-docker.sh quicktest``` to verify your installation.
 If everything is set up correctly, you can now run the following command to open jupyter notebook:
 
 ```bash
-bash ./run-docker.sh notebook
+./run-docker.sh notebook
 ```
 
 This will launch the Jupyter notebook server inside a Docker container, and print a link on the terminal that you can open in your browser to run the FINN notebooks or create new ones. The link will look something like this (the token you get will be different): ```http://127.0.0.1:8888/?token=1dbc348eff2e275f9fdc9e61d9e9564fe5cf8e0d259a8642```. Open it in your browser and you are ready to go.
