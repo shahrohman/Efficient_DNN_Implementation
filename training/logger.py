@@ -66,11 +66,11 @@ class Logger(object):
 
     def eval_batch_cli_log(self, epoch_meters, batch, tot_batches):
         self.info('Test: [{0}/{1}]\t'
-                  'Model Time {model_time.val:.3f} ({model_time.avg:.3f})\t'
-                  'Loss Time {loss_time.val:.3f} ({loss_time.avg:.3f})\t'
-                  'Loss {loss.val:.4f} ({loss.avg:.4f})\t'
-                  'Prec@1 {top1.val:.3f} ({top1.avg:.3f})\t'
-                  'Prec@5 {top5.val:.3f} ({top5.avg:.3f})\t'
+                  'Model Time {model_time.avg:.3f}\t'
+                  'Loss Time {loss_time.avg:.3f}\t'
+                  'Loss {loss.avg:.4f}\t'
+                  'Top1 Acc{top1.avg:.3f}\t'
+                  'Top5 Acc {top5.avg:.3f}\t'
                   .format(batch, tot_batches,
                           model_time=epoch_meters.model_time,
                           loss_time=epoch_meters.loss_time,
@@ -83,8 +83,8 @@ class Logger(object):
                          'Time {batch_time.avg:.3f}\t'
                          'Data {data_time.avg:.3f}\t'
                          'Loss {loss.avg:.4f}\t'
-                         'Top1 Prec {top1.avg:.3f}\t'
-                         'Top5 Prec {top5.avg:.3f}\t'
+                         'Top1 Acc {top1.avg:.3f}\t'
+                         'Top5 Acc {top5.avg:.3f}\t'
                          .format(epoch, batch, tot_batches,
                                  batch_time=epoch_meters.batch_time,
                                  data_time=epoch_meters.data_time,
