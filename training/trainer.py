@@ -34,6 +34,9 @@ class Trainer(object):
             os.makedirs('output')
         self.output_dir_path = os.path.join(os.getcwd(), 'output')
         self.logger = Logger(self.output_dir_path, True)
+        # if checkpoints does not exist in output, create it
+        if not os.path.exists(os.path.join(self.output_dir_path, 'checkpoints')):
+            os.makedirs(os.path.join(self.output_dir_path, 'checkpoints'))
         self.checkpoints_dir_path = os.path.join(self.output_dir_path, 'checkpoints')
 
         # Randomness
