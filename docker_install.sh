@@ -1,3 +1,4 @@
+#!/bin/bash
 # dependencies
 sudo apt-get install \
     apt-transport-https \
@@ -19,3 +20,5 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 sudo groupadd docker
 # add your user to the docker group
 sudo usermod -aG docker $USER
+# activate the changes to groups:
+newgrp docker
